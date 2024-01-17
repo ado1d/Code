@@ -29,16 +29,15 @@
     typedef unordered_set<int>                  usi;
 
     void solve() {
-        int n;              cin >> n;
-        string s;           cin >> s;
-        int ans = 0;
-        for (auto x : s) {
-            if (x == '+') {
-                ans++;
-            }else ans--;
+        int n;                      cin >> n;
+        string s, s1;               cin >> s >> s1;
+        int cnt1 = 0, cnt2 = 0, cnt3 = 0;
+        rep(i, 0, n) {
+            if (s[i] == '1') cnt1++;
+            if (s1[i] == '1') cnt2++;
+            if (s[i] != s1[i]) cnt3++;
         }
-        cout << abs(ans) << '\n';
-
+        cout << abs(cnt1 - cnt2) + cnt3 << '\n';
     }
 
     signed main() {
